@@ -1,0 +1,25 @@
+---
+title: "Algonquin Provintial Park"
+author: "Susana Arias Laso"
+date: '2018-10-07'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+library(leaflet)
+set.seed(2017-08-27)
+df <- data.frame(lat = runif(50, min = 45.62, max = 45.95), 
+                 lng = runif(50, min = -78.85, max = -77.97))
+df %>%
+    leaflet() %>%
+    addTiles() %>%
+    addMarkers(clusterOptions = markerClusterOptions())
+```
+
+
+
+
