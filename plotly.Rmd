@@ -1,0 +1,27 @@
+---
+title: "Plotly assignment"
+author: "Susana Arias Laso"
+date: '2018-10-10'
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Motor Trend Car Road Tests
+
+```{r, echo = FALSE, fig.align = 'center', message = FALSE, warning=FALSE}
+library(plotly)
+#plot_ly(economics, x = ~date, y = ~unemploy / pop)
+p <- plot_ly(mtcars, x = mtcars$disp, y = mtcars$mpg, size = mtcars$wt, 
+        color = as.factor(mtcars$cyl)) %>%
+    layout(xaxis = list(title = "displacement (cu.in)", titlefont = 18), 
+           yaxis = list(title = "miles/gallon"), titlefont = 18)
+p
+```
+
+
+
+
